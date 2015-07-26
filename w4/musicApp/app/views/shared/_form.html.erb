@@ -1,0 +1,15 @@
+<% url = action == "in" ? session_url : users_url %>
+
+<form action="<%= url %>" method="POST">
+<%= auth_token %>
+<p><label for="email">Email:</label>
+<input type="text" 
+			 name="user[email]" 
+			 id="email"></p>
+
+<p><label for="password">Password:</label>
+<input type="password" 
+			 name="user[password]" 
+			 id="password"></p>
+
+<input type="submit" value="Sign <%= action %>!">

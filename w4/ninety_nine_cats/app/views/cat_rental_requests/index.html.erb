@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Cat Rental Requests</h2>
+    <% @cat_rental_requests.sort_by{|r1| r1.start_date }.each do |crr| %>
+      <a href=<%= cat_rental_request_url(crr) %>><%= crr.cat.name.capitalize %></a><br>
+    <% end %>
+
+
+</body>
+</html>

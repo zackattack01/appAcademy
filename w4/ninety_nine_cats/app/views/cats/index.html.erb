@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Cats</h2>
+    <% @cats.each do |cat| %>
+      <a href=<%= cat_url(cat) %>><%= cat.name.capitalize %></a><br>
+    <% end %>
+
+
+</body>
+</html>

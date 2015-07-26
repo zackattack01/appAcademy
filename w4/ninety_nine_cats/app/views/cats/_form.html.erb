@@ -1,0 +1,24 @@
+<%  action = @cat.persisted? ? cat_url(@cat) : cats_url %>
+<% button_label = @cat.persisted? ? "Edit " : "Create " %>
+<form action="<%= action %>" method="POST">
+  <% if @cat.persisted? %> <input type="hidden" name="_method" value="PATCH"> <% end  %>
+  <p>Pick a name: <input type="text" name="cat[name]" value="<%= @cat.name %>"></p>
+  <p>Any memories? <textarea name="cat[description]" cols="30" rows="4" ><%= @cat.description %></textarea></p>
+  <p>Birthdate: <input type="date" name="cat[birth_date]" value="<%= @cat.birth_date %>"></p>
+  <p>Pick a sex:</p>
+    <label for="Male">M</label>
+    <input type="radio" <%= "checked" if @cat.sex == "M" %> id="Male" name="cat[sex]" value ="M">
+    <label for="Female">F</label>
+  <input type="radio" <%= "checked" if @cat.sex == "F" %> id="Female" name="cat[sex]" value = "F">
+  <p><select name="cat[color]">
+      <option value=""></option>
+  <% CatsController::COLORS.each do |color| %>
+      <option value="<%= color %>" <%= "selected" if @cat.color == color %>>
+        <%= color.capitalize %></option>
+      <% end %>
+    </select>
+    </p>
+
+    <input type="submit" value="<%= button_label %>your cat!">
+
+</form>

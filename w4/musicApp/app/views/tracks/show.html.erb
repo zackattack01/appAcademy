@@ -1,0 +1,10 @@
+<h1><%= "#{@track.title} #{'bonus track' if @track.track_type == 'bonus'}" %></h1>
+<h2>album: <%= @track.album.title %></h2>
+<h2>by: <%= @track.album.band.name %></h2>
+<% @track.notes.each do |note| %>
+<%= render 'notes/note', note: note %>
+<% end %>
+<%= render 'notes/form' %>
+<%= delete_track(@track) %>
+<%= edit_track(@track) %>
+<%= back_to_album(@track.album) %>

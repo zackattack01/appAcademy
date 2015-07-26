@@ -1,0 +1,33 @@
+<% url = album.persisted? ? album_url(album) : albums_url %>
+<% button_label = album.persisted? ? "Edit " : "Create " %>
+<form action="<%= url %>" method="POST">
+<% if album.persisted? %>
+	<input type="hidden" name="_method" value="PATCH">
+<% end %>
+<%= auth_token %>
+<p><label for="title">Title:</label>
+<input type="text" name="album[title]" id="title"></p>
+<p><label for="band">Band:</label>
+<select name="album[band_id]" 
+			 id="band">
+<% bands.each do |band| %>
+<option	value="<%= band.id %>"
+	<%= "selected" if params[:band_id] == band.id.to_s %>><%= band.name %></option>
+<% end %>
+</select>
+</p>
+
+<p><label for="rec_type">Live:</label>
+<input type="radio" 
+			 name="album[rec_type]" 
+			 id="live"
+			 value="live"></p>
+
+<p><label for="studio">Studio:</label>
+<input type="radio" 
+			 name="album[rec_type]" 
+			 id="studio"
+			 value="studio"></p>
+
+<input type="submit" value="<%= button_label %>album!">
+</form>

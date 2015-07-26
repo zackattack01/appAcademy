@@ -1,0 +1,22 @@
+<form method="post" action="<%= action %>">
+  <%= patch_tag if @post.persisted? %>
+  <%= render 'error_box' %>
+  <%= csrf_tag %>
+
+  <label for="post_title">Title</label>
+  <input  id="post_title" type="text" name="post[title]" value="<%= @post.title %>">
+  <label for="post_content">Content</label>
+  <input  id="post_content" type="text" name="post[title]" value="<%= @post.content %>">
+
+  <p>Subs</p>
+  <% @subs.each do |sub| %>
+    <% selected = @post.persisted? && @our_subs.include?(sub) %>
+    <input  id="post_sub_<%= sub.title %>"
+            name="post[sub_ids][]" type="checkbox"
+            value="<%= sub.id %>"
+            <%= "selected" if selected %> >
+    <label for="post_sub_<%= sub.title %>"><%= sub.title %>
+  <% end %>
+
+  <input type="submit" value="<%= caption_value %>">
+</form>

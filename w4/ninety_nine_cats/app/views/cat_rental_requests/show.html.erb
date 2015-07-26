@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2>Cat Rental Req for: <%=@cat_rental_request.cat.name %></h2>
+  <table>
+  <% %i{ cat_id start_date end_date }.each do |attr| %>
+    <tr>
+      <td><%= "#{attr}: " %></td><td><%= @cat_rental_request.send(attr) %></td>
+    </tr>
+  <% end %>
+</table>
+</body>
+</html>

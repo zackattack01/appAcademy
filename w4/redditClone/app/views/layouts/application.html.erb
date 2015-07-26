@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RedditClone</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="navbar">
+    RedditClone.
+
+    <%= link_to 'Users', users_url %>
+    <%= link_to 'Subs', subs_url %>
+
+    <% if logged_in? %>
+      <%= link_to 'My profile', user_url(current_user) %>
+      <%= button_to 'Log Out!', session_url, method: :delete %>
+    <% else %>
+      <%= link_to 'Sign In!', new_session_url %>
+      <%= link_to 'Sign Up!', new_user_url %>
+    <% end %>
+  </div>
+
+  <%= yield %>
+
+</body>
+</html>

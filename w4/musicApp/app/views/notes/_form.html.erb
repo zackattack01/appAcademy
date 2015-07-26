@@ -1,0 +1,8 @@
+<form action="<%= track_notes_url(params[:id]) %>" method="POST">
+
+<%= auth_token %>
+<p><label for="words">Your note:</label>
+<textarea name="note[words]" id="words"></textarea></p>
+
+<input type="submit" value="Post your note!">
+</form>

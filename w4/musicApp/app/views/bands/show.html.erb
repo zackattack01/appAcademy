@@ -1,0 +1,10 @@
+<h1><%= @band.name %></h1>
+<ul><% @band.albums.each do |album| %>
+	<li><%= go_to_album(album) %></li>
+	<% end %>
+</ul>
+
+<%= make_new_album %><br>
+<%= edit_band(@band) %>
+<%= delete_band(@band) %>
+<%= index_bands %>

@@ -1,0 +1,10 @@
+<% recorded = @album.rec_type == "live" ? "live " : "in the studio " %>
+<h1><%= @album.title %></h1>
+<p> Recorded <%= recorded %>by: <%= @album.band.name %></p>
+<ul><% @album.tracks.each do |track| %>
+	<li><%= go_to_track(track) %></li>
+	<% end %>
+</ul>
+<%= delete_album(@album) %>
+<%= edit_album(@album) %>
+<%= back_to_band(@album.band) %>

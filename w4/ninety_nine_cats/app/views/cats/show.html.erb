@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h2><%= @cat.name %></h2>
+  <table>
+  <% %i{ sex birth_date color description }.each do |attr| %>
+    <tr>
+      <td><%= "#{attr}: " %></td><td><%= @cat.send(attr) %></td>
+    </tr>
+  <% end %>
+</table>
+<%= render partial: 'footer' %>
+</body>
+</html>
