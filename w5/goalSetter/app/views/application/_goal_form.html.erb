@@ -1,0 +1,31 @@
+<% action_url = action == :edit ? goal_url(goal) : goals_url %>
+<% caption_val = action == :edit ? "Edit Goal" : "Set Goal"%>
+<form action="<%= action_url %>" method="POST">
+  <% if action == :edit %>
+    <input type="hidden" name="_method" value="PATCH">
+  <% end %>
+  <%= auth_token %>
+
+  <% Goal::VISIBLE.each do |setting| %>
+    <label for="<%= setting.downcase %>"><%= setting %></label>
+    <input type="radio"
+           id="<%= setting.downcase %>"
+           name="goal[visible]"
+           value="<%= setting %>"
+           <%= "checked" if @goal.visible == setting %>>
+  <% end %>
+
+  <label for="completed">Completed?</label>
+  <input type="hidden"
+         name="goal[completed]"
+         value="false">
+
+  <input type="checkbox"
+         name="goal[completed]"
+         value="true"
+         <%= "checked" if @goal.completed == "true" %>>
+
+  <label for="goal_body">Your Goal</label>
+  <textarea name="goal[body]" id="goal_body"><%= @goal.body %></textarea>
+  <input type="submit" value="<%= caption_val %>">
+</form>

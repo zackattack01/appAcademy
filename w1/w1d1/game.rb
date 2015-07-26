@@ -96,12 +96,10 @@ class Game
 end
 
 
-if __FILE__ == $PROGRAM_NAME
-  
+if __FILE__ == $PROGRAM_NAME  
   require_relative 'board'
   require_relative 'card'
 
   memory_game = Game.new(2,6,10,4)
   memory_game.play
-
 end

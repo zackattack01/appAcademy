@@ -1,0 +1,13 @@
+<h1> <%= @user.username %> </h1>
+
+<ul>
+  <% if @user == current_user %>
+    <% @user.goals.each do |goal| %>
+      <li><%= goal.body %><%= link_to 'Edit Goal', edit_goal_url(@user.id) %></li><br>
+    <% end %>
+  <% else %>
+    <% users_public_goals(@user).each do |goal| %>
+      <li><%= goal.body %></li><br>
+    <% end %>
+  <% end %>
+</ul>

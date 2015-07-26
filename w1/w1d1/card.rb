@@ -34,6 +34,5 @@ class Card
   end
 
   private 
-
-    attr_accessor :face
+  attr_accessor :face
 end

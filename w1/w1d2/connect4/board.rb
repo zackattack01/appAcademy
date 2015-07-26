@@ -93,8 +93,7 @@ class Board
 
 
   private
-
-    attr_reader :grid
+  attr_reader :grid
 end
 
 

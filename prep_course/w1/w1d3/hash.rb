@@ -1,38 +1,38 @@
 class MyHashSet
-	attr_accessor :store
+  attr_accessor :store
 
-	def initialize
-	  self.store = {}
-	end
+  def initialize
+    self.store = {}
+  end
 
-	def insert(el)
-	  store[el] = true
-	end
+  def insert(el)
+    store[el] = true
+  end
 
-	def include?(el)
-	  store[el].nil? ? false : true
-	end
+  def include?(el)
+    store[el].nil? ? false : true
+  end
 
-	def delete(el)
-	  store.delete(el) and return true if store[el]
-	  false
-	end
+  def delete(el)
+    store.delete(el) and return true if store[el]
+    false
+  end
 
-	def union(set2)
-	  store.merge(set2.store.select { |key, val| !self.include? key })
-	end
+  def union(set2)
+    store.merge(set2.store.select { |key, val| !self.include? key })
+  end
 
-	def to_a
-	  store.keys
-	end
+  def to_a
+    store.keys
+  end
 
-	def intersect(set2)
-	   store.select { |key, val| set2.include? key }
-	end
+  def intersect(set2)
+     store.select { |key, val| set2.include? key }
+  end
 
-	def minus(set2)
-	  store.select { |key, val| !set2.include? key }
-	end
+  def minus(set2)
+    store.select { |key, val| !set2.include? key }
+  end
 end
 
 test_set1 = MyHashSet.new

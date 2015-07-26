@@ -1,4 +1,4 @@
-			######### ARRAYS ########
+######### ARRAYS ########
 class Array
   
 ## Write your own uniq method, called my_uniq; 

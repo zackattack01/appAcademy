@@ -28,5 +28,4 @@ def translate(sentence)
   end
 
   rebuilt.join(' ')
-
 end
