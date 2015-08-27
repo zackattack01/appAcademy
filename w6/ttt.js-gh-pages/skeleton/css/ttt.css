@@ -1,0 +1,47 @@
+.row {
+  height: 200px;
+  width: 600px;
+  margin:0 auto;
+  position: relative;
+}
+
+.square {
+  border: 1px solid black;
+  height: inherit;
+  width: 200px;
+  float: left;
+  margin-left: -2px;
+  background-color: #ccc;
+}
+
+.group:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.square:hover {
+  background-color: yellow;
+}
+
+.selected {
+  background-color: white;
+  text-align: center;
+  font-size: 120px;
+}
+
+.x {
+  color: red;
+
+}
+
+.o {
+  color: blue;
+}
+
+.congrats {
+  display: block;
+  text-align: center;
+  font-size: 64px;
+  margin: 0 auto;
+}

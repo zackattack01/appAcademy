@@ -1,0 +1,59 @@
+.disc {
+  height: inherit;
+  float:left;
+  width: 200px;
+  margin-left: 0;
+}
+
+.emptyDisc {
+
+}
+
+.big {
+  background-color: red;
+  height: 200px;
+}
+
+.medium {
+  background-color: yellow;
+  height: 150px;
+}
+
+.small {
+  background-color: blue;
+  height: 100px;
+}
+
+.tower {
+  position: relative;
+  height: 200px;
+  width: 600px;
+  border: 1px solid #000;
+}
+
+.selected {
+  border: 1px solid #FF0000;
+}
+
+.congrats {
+  font-size: 96px;
+  margin-left: 200px;
+  margin-top: 300px;
+  display: block;
+  text-align: left;
+  transform: rotate(90deg);
+}
+
+.board {
+  -webkit-transform: rotate(270deg);
+  -moz-transform: rotate(270deg);
+  -o-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+}
+
+.group:after {
+  display: block;
+  clear: both;
+  content: "";
+}
