@@ -1,0 +1,96 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import url(http://fonts.googleapis.com/css?family=Play);
+
+body {
+ color: green;
+ font-family: 'Play', serif;
+ text-align:center;
+ position: relative;
+}
+
+.header h1 {
+  text-align: left;
+  font-size: 50px;
+  float:left;
+  color: black;
+  display: inline-block;
+  font-weight: 700;
+  margin-top:0px;
+}
+
+a {
+  display: inline-block;
+  font-size: 1.2em;
+  padding: 10px;
+}
+
+.back-to-index {
+  color: green; 
+  display: inline;
+}
+
+.new-feed {
+  color: green;
+  padding: 10px;
+  display:inline-block;
+  border: thin solid green;
+  -webkit-appearance: button;
+}
+
+.new-feed:hover, .back-to-index:hover {
+  color: white;
+  text-shadow: 0 0 10px green; 
+}
+
+.new-feed:hover {
+  box-shadow: 0 0 10px black;
+}
+
+.clearfix {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+input {
+ margin: 10px;
+}
+
+h1 {
+  font-size: 3.5em;
+}
+
+ul {
+ list-style-type: none;
+}
+
+li {
+  margin: 5px;
+}
+
+a:hover {
+  text-shadow: 0 0 10px blue;
+  color: white;
+}
+
+.logo {
+  float: left;
+  height: 50px;
+  width: 50px;
+  background-image: url(bigrss.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.header {
+  position: relative;
+}
+
+.delete {
+  color: red;
+}
+
+.delete:hover, .refresh:hover, .submit-new:hover {
+  box-shadow: 0 0 10px black;
+}
